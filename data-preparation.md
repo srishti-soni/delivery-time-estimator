@@ -173,7 +173,6 @@ Keeping the logic in `src/` means the notebook and any later script share one im
 | 2 | Warehouse load definition | Same-seller orders handed to carrier on the same day |
 | 3 | Carrier tier bands | Three quantile bands of freight per kg-km |
 | 4 | Transit cap | 60 days, revisit in EDA |
-| 5 | Where to run | Local conda env `xbnb` first; same code runs in Colab later |
 
 ## 8. Known Limitations (for the README)
 
