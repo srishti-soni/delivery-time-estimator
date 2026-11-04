@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Secrets / Kaggle credentials
+.kaggle/
+kaggle.json
+.env
+Kaggle-Details/
+
+# Raw data (large, re-downloadable)
+data/raw/*
+!data/raw/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
