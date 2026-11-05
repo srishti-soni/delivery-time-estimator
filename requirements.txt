@@ -1,0 +1,12 @@
+kagglehub==1.0.2
+pandas
+numpy
+scikit-learn
+lightgbm
+mapie
+shap
+matplotlib
+seaborn
+plotly
+joblib
+streamlit
