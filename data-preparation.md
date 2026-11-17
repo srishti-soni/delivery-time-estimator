@@ -104,7 +104,7 @@ flowchart TD
 ### Step 5: Warehouse load
 
 - **Decision:** for each shipment, `warehouse_load` = number of orders the same seller handed to the carrier on the same calendar day as this one (including itself).
-- **Decision to confirm:** count over all delivered shipments, before the Step 7 quality filters are applied. Otherwise the filters would remove rows and make the counts too low.
+- **Decision to confirm:** count over all delivered shipments, before the multi-seller drop and the Step 7 quality filters. Otherwise those filters would remove rows and make the counts too low.
 
 **Why:** this is a real signal of how busy a dispatch point was. Olist has no explicit warehouse field.
 
@@ -127,7 +127,7 @@ Applied after the columns exist, each with a logged count of rows removed.
 
 | Rule | Reason | Evidence |
 |---|---|---|
-| `transit_days < 0` | Delivery before pickup is a data error | 23 orders |
+| `transit_days <= 0` | Delivery before or at the same instant as pickup is a data error | 23 negative orders, plus 8 exactly 0 in the notebook run |
 | `transit_days` above a cap | Extreme tail is likely data or lost-package cases | 225 orders above 60 days |
 | `weight_kg` missing or 0 | Not a valid package | 6 products |
 | `distance_km` missing | No coordinates | 278 customer and 7 seller zips affected |
