@@ -20,3 +20,7 @@ data/raw/*
 .DS_Store
 .vscode/
 .idea/
+
+# Processed data is rebuilt by notebooks/01_data_preparation.ipynb
+data/processed/*
+!data/processed/.gitkeep
